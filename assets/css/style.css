@@ -20,7 +20,7 @@ a {
 }
 
 a:hover {
-  color: #4b57fe;
+  color: #58e07c;
   text-decoration: none;
 }
 
@@ -126,7 +126,7 @@ h6 {
 }
 
 #header .profile .social-links a:hover {
-  background: #4b57fe;
+  background: #58e07c;
   color: #fff;
   text-decoration: none;
 }
