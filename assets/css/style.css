@@ -10,7 +10,7 @@
 # General
 --------------------------------------------------------------*/
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
   color: #272829;
 }
 
@@ -20,7 +20,7 @@ a {
 }
 
 a:hover {
-  color: #58e07c;
+  color: #4b57fe;
   text-decoration: none;
 }
 
@@ -91,7 +91,7 @@ h6 {
   margin: 15px auto;
   display: block;
   width: 120px;
-  border: 8px solid #2c2f3f;
+  border: 6px solid #2c2f3f;
 }
 
 #header .profile h1 {
@@ -126,7 +126,7 @@ h6 {
 }
 
 #header .profile .social-links a:hover {
-  background: #58e07c;
+  background: #4b57fe;
   color: #fff;
   text-decoration: none;
 }
@@ -380,6 +380,14 @@ section {
 
 .about .content p:last-child {
   margin-bottom: 0;
+}
+
+.about img {
+  border-radius: 0.5rem;
+}
+
+.about .fst {
+  margin-top: 15px;
 }
 
 /*--------------------------------------------------------------
