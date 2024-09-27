@@ -383,7 +383,7 @@ section {
 }
 
 .about img {
-  border-radius: 0.5rem;
+  border-radius: 5px;
 }
 
 .about .fst {
@@ -470,6 +470,7 @@ section {
   display: inline-block;
   font-weight: 600;
   margin-bottom: 10px;
+  border-radius: 5px;
 }
 
 .resume .resume-item ul {
@@ -503,28 +504,25 @@ section {
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.tech-stack {
-  margin: 15px 0;
-}
-
 
 .lesson-learned {
-  background-color: #e9ecef;
-  border-left: 2px solid #4b57fe;
+  background-color: #e4edf9;
   padding: 10px 15px;
-  margin: 15px 0;
-  border-radius: 1px;
+  border-radius: 5px;
 }
 
-.lesson-learned h5 {
-  margin-bottom: 5px;
-  margin-right: 10px;
-  color: #4b57fe;
+.lesson-learned b {
+  color: #050d18;
+}
+
+.lesson-learned p {
+  color: #050d18;
+  margin: 0px;
 }
 
 .project-link {
   display: inline-block;
-  margin-top: 10px;
+  margin-bottom: 20px;
   padding: 8px 15px;
   background-color: #172334;
   color: #9799a7;
