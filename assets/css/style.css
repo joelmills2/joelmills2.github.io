@@ -537,46 +537,93 @@ section {
   color: #FBFBF7;
 }
 
-.architecture-diagram {
-  margin-top: 20px;
-  text-align: center;
+.video-showcase {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.architecture-diagram img {
-  max-width: 65%;
-  border-radius: 5px;
+.demo-video, .pitch-video {
+    width: 100%;
 }
 
-.architecture-diagram .caption {
-  margin-top: 10px;
-  font-style: italic;
-  color: #50504A;
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    background-color: #0E1E1F;
 }
 
-.guava-mockups {
-  text-align: center;
-  margin-bottom: 50px;
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
-.guava-mockups img {
-  display: inline-block;
-  margin: 0 10px;
-  max-width: 14%;
-  height: auto;
+.video-showcase h5 {
+    margin-bottom: 1rem;
+    color: #050d18;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
 }
 
-.guava-mockups .caption {
-  margin-top: 10px;
-  font-style: italic;
-  color: #50504A;
+.video-showcase .caption {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    color: #050d18;
+    text-align: center;
+    background-color: #E2F3F0f9;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Hover effect for videos */
+.video-container:hover {
+    transform: translateY(-2px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .video-showcase {
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    .demo-video, .pitch-video {
+        width: 48%;
+    }
 }
 
 @media (max-width: 768px) {
-  .guava-mockups img {
-    max-width: 45%;
-    margin: 5px 0;
-  }
+    .video-showcase {
+        padding: 15px;
+    }
+    
+    .video-showcase h5 {
+        font-size: 14px;
+    }
+    
+    .video-container {
+        margin-bottom: 1rem;
+    }
 }
+
 
 /*--------------------------------------------------------------
 # Breadcrumbs
