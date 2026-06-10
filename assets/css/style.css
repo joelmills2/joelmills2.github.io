@@ -153,32 +153,71 @@ body {
 /* ---- Shape selector ---- */
 .shape-options {
   display: flex;
-  gap: 0.7rem;
+  gap: 1.2rem;
+  align-items: flex-end;
 }
 .shape-option {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.2rem;
-  padding: 0.5rem 0.9rem;
-  border: 2px solid #e0dbd4;
-  border-radius: 12px;
+  gap: 1rem;
   cursor: pointer;
-  font-size: 1.5rem;
-  min-width: 64px;
-  transition: border-color 0.15s, background 0.15s, transform 0.15s;
+  transition: transform 0.15s;
   user-select: none;
 }
+.shape-option:hover { transform: translateY(-4px); }
+.shape-option.selected { transform: translateY(-6px); }
 .shape-option span {
   font-family: 'Syne', sans-serif;
   font-size: 0.6rem;
   font-weight: 800;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.18em;
   color: #aaa;
+  transition: color 0.15s;
 }
-.shape-option:hover { border-color: #555; transform: translateY(-2px); }
-.shape-option.selected { border-color: #111; background: #f0ede8; }
 .shape-option.selected span { color: #111; }
+
+/* shared icon base */
+.shape-icon {
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  transition: box-shadow 0.15s;
+}
+.shape-icon::before, .shape-icon::after {
+  content: '';
+  position: absolute;
+  background: #222;
+  border-radius: 50%;
+}
+.shape-option:hover .shape-icon { box-shadow: 0 8px 20px rgba(0,0,0,0.18); }
+.shape-option.selected .shape-icon { box-shadow: 0 0 0 3px #111, 0 10px 24px rgba(0,0,0,0.22); }
+
+/* car: matches colour picker silhouette */
+.shape-icon-car {
+  width: 56px; height: 34px;
+  background: #333;
+  border-radius: 8px 8px 5px 5px;
+}
+.shape-icon-car::before { left: 6px; bottom: -7px; width: 14px; height: 14px; }
+.shape-icon-car::after  { right: 6px; bottom: -7px; width: 14px; height: 14px; }
+
+/* truck: wider, two-tone cab vs bed */
+.shape-icon-truck {
+  width: 72px; height: 30px;
+  background: linear-gradient(to right, #444 0% 58%, #2a2a2a 58% 100%);
+  border-radius: 5px 10px 5px 5px;
+}
+.shape-icon-truck::before { left: 8px; bottom: -7px; width: 14px; height: 14px; }
+.shape-icon-truck::after  { right: 8px; bottom: -7px; width: 14px; height: 14px; }
+
+/* moto: narrow body, bigger wheels */
+.shape-icon-moto {
+  width: 34px; height: 16px;
+  background: #333;
+  border-radius: 5px 5px 3px 3px;
+}
+.shape-icon-moto::before { left: -2px; bottom: -9px; width: 17px; height: 17px; }
+.shape-icon-moto::after  { right: -2px; bottom: -9px; width: 17px; height: 17px; }
 
 /* ---- Touch controls ---- */
 #touch-controls {

@@ -440,28 +440,14 @@ function createMotorcycle(color) {
     new THREE.MeshLambertMaterial({ color: 0x222222 }))
   seat.position.set(0, 0.9, -0.55); carGroup.add(seat)
 
-  // Rider body
-  const rider = new THREE.Mesh(new THREE.BoxGeometry(0.48, 0.65, 0.48),
-    new THREE.MeshLambertMaterial({ color: 0x2a2a2a }))
-  rider.position.set(0, 1.42, -0.08); rider.castShadow = true; carGroup.add(rider)
-
-  // Helmet
-  const helmet = new THREE.Mesh(new THREE.SphereGeometry(0.21, 8, 6),
-    new THREE.MeshLambertMaterial({ color: new THREE.Color(color) }))
-  helmet.position.set(0, 1.88, 0.1); carGroup.add(helmet)
-
   // Handlebars
-  const bars = new THREE.Mesh(new THREE.BoxGeometry(0.85, 0.07, 0.07), cMat)
-  bars.position.set(0, 1.15, 0.9); carGroup.add(bars)
+  const bars = new THREE.Mesh(new THREE.BoxGeometry(0.52, 0.06, 0.06), cMat)
+  bars.position.set(0, 1.05, 0.88); carGroup.add(bars)
 
   // Fork
   const fork = new THREE.Mesh(new THREE.BoxGeometry(0.07, 0.65, 0.07), cMat)
   fork.position.set(0, 0.5, 1.05); carGroup.add(fork)
 
-  // Exhaust
-  const exh = new THREE.Mesh(new THREE.CylinderGeometry(0.045, 0.055, 1.2, 6),
-    new THREE.MeshLambertMaterial({ color: 0xAA8844 }))
-  exh.rotation.z = Math.PI/2; exh.position.set(0.32, 0.48, -0.2); carGroup.add(exh)
 
   // Headlight
   carGroup.userData.headlights = []
@@ -481,8 +467,15 @@ function createMotorcycle(color) {
 // ---- Vehicle dispatcher ----
 function createVehicle(colorHex, shape) {
   const c = parseInt(colorHex)
-  if (shape === 'truck') return createTruck(c)
-  if (shape === 'moto')  return createMotorcycle(c)
+  if (shape === 'truck') {
+    car.maxSpeed = 0.14; car.boostSpeed = 0.26; car.accel = 0.010; car.friction = 0.89; car.turnSpeed = 0.030
+    return createTruck(c)
+  }
+  if (shape === 'moto') {
+    car.maxSpeed = 0.24; car.boostSpeed = 0.48; car.accel = 0.018; car.friction = 0.92; car.turnSpeed = 0.056
+    return createMotorcycle(c)
+  }
+  car.maxSpeed = 0.18; car.boostSpeed = 0.36; car.accel = 0.013; car.friction = 0.91; car.turnSpeed = 0.042
   return createCar(c)
 }
 
