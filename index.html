@@ -37,6 +37,218 @@
       <button id="start-btn">START DRIVING</button>
       <p class="hint">WASD / Arrow Keys &nbsp;·&nbsp; SPACE = boost &nbsp;·&nbsp; ENTER = explore</p>
     </div>
+    <div class="scroll-hint-arrow">
+      <span>or scroll for classic view</span>
+      <div class="bounce-down">↓</div>
+    </div>
+  </div>
+
+  <!-- Classic (scrollable) View -->
+  <div id="classic-view">
+    <nav class="cv-nav">
+      <span class="cv-nav-name">Joel Mills</span>
+      <div class="cv-nav-links">
+        <a href="#cv-about">About</a>
+        <a href="#cv-experience">Experience</a>
+        <a href="#cv-projects">Projects</a>
+        <a href="#cv-education">Education</a>
+        <a href="#cv-travel">Travel</a>
+        <a href="#cv-contact">Contact</a>
+      </div>
+      <button class="cv-play-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">▶ Play the game</button>
+    </nav>
+
+    <section id="cv-about" class="cv-section" style="--accent:#6C63FF">
+      <div class="section-content">
+        <div class="about-header">
+          <img src="assets/img/joel_mills_headshot.jpeg" alt="Joel Mills" class="about-photo">
+          <div>
+            <div class="about-name">Joel Mills</div>
+            <div class="about-tagline">Software Engineer · Startup Founder</div>
+          </div>
+        </div>
+        <h1>ABOUT</h1>
+        <p>I'm a Software Engineer at Lyft passionate about developing altruistic software. I'm particularly interested in autonomous systems, robotics, healthcare, and building at scale. I also love working for and founding startups.</p>
+        <p>When I'm not building, I'm playing guitar, going to the gym, running, travelling, hiking, watching sports, cooking, spending time with family, reading fiction, skiing, playing chess, or doing many of these things at the same time.</p>
+        <div class="skills-grid">
+          <span class="skill-tag">Python</span><span class="skill-tag">Go</span>
+          <span class="skill-tag">Java</span><span class="skill-tag">TypeScript</span>
+          <span class="skill-tag">C#</span><span class="skill-tag">SQL</span>
+          <span class="skill-tag">React</span><span class="skill-tag">Flask</span>
+          <span class="skill-tag">AWS</span><span class="skill-tag">Docker</span>
+          <span class="skill-tag">PostgreSQL</span><span class="skill-tag">MongoDB</span>
+          <span class="skill-tag">Git</span><span class="skill-tag">MCP</span>
+          <span class="skill-tag">REST APIs</span><span class="skill-tag">gRPC</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="cv-experience" class="cv-section" style="--accent:#4ECDC4">
+      <div class="section-content">
+        <h1>EXPERIENCE</h1>
+        <div class="exp-item">
+          <div class="exp-header"><h3>Software Engineer</h3><span class="exp-date">July 2026 - Present</span></div>
+          <p class="exp-company">Lyft · Full-Time · Toronto, ON</p>
+          <ul><li>Return offer to the same team.</li></ul>
+        </div>
+        <div class="exp-item">
+          <div class="exp-header"><h3>Software Engineer Intern</h3><span class="exp-date">June - September 2025</span></div>
+          <p class="exp-company">Lyft · Toronto, ON</p>
+          <ul>
+            <li>Improved customer reliability by developing an automated service to clean up stuck rides.</li>
+            <li>Designed a sparse DynamoDB GSI that reduces query range from 5B base items to ~50k indexed items.</li>
+            <li>Unlocked real-time observability into all active rides for the first time at Lyft through the GSI and a new gRPC endpoint.</li>
+            <li>Recognised for exceeding T3 (entry-level) expectations and meeting the majority of T4 expectations.</li>
+          </ul>
+        </div>
+        <div class="exp-item">
+          <div class="exp-header"><h3>Software Engineer Intern - AI Deployment and Evaluation Lab</h3><span class="exp-date">May - August 2024</span></div>
+          <p class="exp-company">Trillium Health Partners · Toronto, ON</p>
+          <ul>
+            <li>Developed an open-source AI monitoring dashboard using Python, Flask, and React for models across three hospitals.</li>
+            <li>Built an ETL pipeline processing 5,000 monthly records using MongoDB, PostgreSQL, and RESTful APIs.</li>
+            <li>Used Prefect to orchestrate workflows with built-in error handling and automated retry logic.</li>
+            <li>Containerised the application with Docker, ensuring consistent deployment across environments.</li>
+          </ul>
+        </div>
+        <div class="exp-item">
+          <div class="exp-header"><h3>Frontend Developer Intern</h3><span class="exp-date">May - June 2023</span></div>
+          <p class="exp-company">SueApp · Tel Aviv, Israel</p>
+          <ul>
+            <li>Led a team of 4 interns using React.js and TypeScript to develop a website for filing online claims in 5 weeks.</li>
+            <li>Managed tasks and timelines using Jira to ensure smooth collaboration and on-time project delivery.</li>
+            <li>Wrote onboarding documentation covering Git workflow and best practices for future intern teams.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="cv-projects" class="cv-section" style="--accent:#FF9F43">
+      <div class="section-content">
+        <h1>PROJECTS</h1>
+        <div class="project-card">
+          <h3>PatchLine</h3>
+          <div class="project-links"><span style="color:#888;font-size:0.82rem">Python · MCP · LLMs</span></div>
+          <ul>
+            <li>Built a plugin-based framework integrating LLM vulnerability detectors and fixers via a standardised abstraction layer.</li>
+            <li>Improved code patch quality using structured, constraint-driven prompt design over naive pipelines.</li>
+          </ul>
+        </div>
+        <div class="project-card">
+          <h3>Guava - Grocery Savings Startup</h3>
+          <div class="project-links"><a href="https://www.downloadguava.com/" target="_blank">App</a></div>
+          <ul>
+            <li>Built full-stack grocery savings app with Python backend and React and React Native frontends.</li>
+            <li>Designed serverless AWS architecture with Lambda, DynamoDB, S3, and API Gateway for scalability.</li>
+            <li>Secured $2,000 grant through AWS Build accelerator program and pitched to potential investors.</li>
+            <li>Reached the final interview of the ERA accelerator in New York City.</li>
+          </ul>
+          <div class="video-embed"><iframe src="https://www.youtube.com/embed/rWE4T2By5rM" allowfullscreen></iframe></div>
+        </div>
+        <div class="project-card">
+          <h3>Queen's AutoDrive - Perception</h3>
+          <div class="project-links"><span style="color:#888;font-size:0.82rem">Python · ROS2 · MATLAB</span></div>
+          <ul>
+            <li>Developed LiDAR-Camera calibration software for autonomous vehicles as part of a 7-person team.</li>
+            <li>Implemented sensor fusion algorithms to improve perception accuracy and object detection using Python and ROS2.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="cv-education" class="cv-section" style="--accent:#6BCB77">
+      <div class="section-content">
+        <h1>EDUCATION</h1>
+        <div class="edu-item">
+          <h3>Bachelor of Computing, Honours with Distinction - Computer Science</h3>
+          <p class="edu-school">Queen's University, Kingston, Ontario</p>
+          <p class="edu-date">September 2022 - May 2026</p>
+          <p class="edu-gpa">Cumulative GPA: 4.28 / 4.30</p>
+        </div>
+        <div class="edu-item">
+          <h3>Exchange Semester - Computer Science</h3>
+          <p class="edu-school">University of New South Wales (UNSW), Sydney, Australia</p>
+          <p class="edu-date">January - May 2025</p>
+          <p class="edu-gpa">Grade: High Distinction</p>
+        </div>
+        <div class="awards-section">
+          <h2>AWARDS</h2>
+          <div class="award-item"><h4>Dean's Award of Excellence</h4><p>2023 and 2024 · Queen's University</p></div>
+          <div class="award-item"><h4>Dean's Honour List with Distinction</h4><p>Top 3% of students in program · 2023, 2024, 2025 · Queen's University</p></div>
+          <div class="award-item"><h4>Principal's Scholarship</h4><p>Top 5% of competitive admission average · 2022 · Queen's University</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cv-travel" class="cv-section" style="--accent:#FF8B94">
+      <div class="section-content">
+        <h1>TRAVEL</h1>
+        <div class="photo-section">
+          <p class="photo-section-label">New Zealand</p>
+          <p class="travel-desc">The most amazing mountains, lakes, and people. Did some beautiful hiking and went skydiving for the first time!</p>
+          <div class="photo-strip">
+            <img src="assets/img/Travel/New%20Zealand/IMG_7931.JPG" alt=""><img src="assets/img/Travel/New%20Zealand/IMG_7935.JPG" alt="">
+            <img src="assets/img/Travel/New%20Zealand/P1020341.jpeg" alt=""><img src="assets/img/Travel/New%20Zealand/P1020510.jpeg" alt="">
+            <img src="assets/img/Travel/New%20Zealand/P1020771.jpeg" alt=""><img src="assets/img/Travel/New%20Zealand/P1020784.jpeg" alt="">
+            <img src="assets/img/Travel/New%20Zealand/IMG_5355.JPG" alt=""><img src="assets/img/Travel/New%20Zealand/IMG_4321.JPG" alt="">
+          </div>
+        </div>
+        <div class="photo-section">
+          <p class="photo-section-label">Southeast Asia</p>
+          <p class="travel-desc">Went to Indonesia, Singapore, Vietnam, and Thailand. Each place taught me so much about the different cultures in Southeast Asia. Highlights included the Ha Giang Loop, chilling with Elephants in Chiang Mai, and riding motorcycles in Bali.</p>
+          <div class="photo-strip">
+            <img src="assets/img/Travel/Southeast%20Asia/IMG_4924.JPG" alt=""><img src="assets/img/Travel/Southeast%20Asia/IMG_5886.JPG" alt="">
+            <img src="assets/img/Travel/Southeast%20Asia/P1030578.jpeg" alt=""><img src="assets/img/Travel/Southeast%20Asia/P1030730.jpeg" alt="">
+            <img src="assets/img/Travel/Southeast%20Asia/P1030860.jpeg" alt=""><img src="assets/img/Travel/Southeast%20Asia/20250329_114831_F2C1AF.jpeg" alt="">
+            <img src="assets/img/Travel/Southeast%20Asia/20250518_170041_1FE630.jpeg" alt=""><img src="assets/img/Travel/Southeast%20Asia/20250519_185141_19F88D.jpeg" alt="">
+          </div>
+        </div>
+        <div class="photo-section">
+          <p class="photo-section-label">Australia</p>
+          <p class="travel-desc">Studied abroad at UNSW Sydney with my best friends. The most amazing semester and time of my life. Australia has gorgeous nature and scenery, kind people, and the best weather. I want to go back!</p>
+          <div class="photo-strip">
+            <img src="assets/img/Travel/Australia/IMG_4764.JPG" alt=""><img src="assets/img/Travel/Australia/IMG_8234.jpeg" alt="">
+            <img src="assets/img/Travel/Australia/P1020091.jpeg" alt=""><img src="assets/img/Travel/Australia/P1020147.jpeg" alt="">
+            <img src="assets/img/Travel/Australia/P1020189.jpeg" alt=""><img src="assets/img/Travel/Australia/P1020205.jpeg" alt="">
+          </div>
+        </div>
+        <div class="photo-section">
+          <p class="photo-section-label">California</p>
+          <p class="travel-desc">Road tripped the coast in a truck and visited a bunch of National Parks. Went for some intense hikes and backpacking.</p>
+          <div class="photo-strip">
+            <img src="assets/img/Travel/California/IMG_0964.jpeg" alt=""><img src="assets/img/Travel/California/IMG_1049.jpeg" alt="">
+            <img src="assets/img/Travel/California/IMG_1068.jpg" alt=""><img src="assets/img/Travel/California/IMG_1143.jpg" alt="">
+            <img src="assets/img/Travel/California/IMG_1202.jpg" alt=""><img src="assets/img/Travel/California/IMG_1216.jpg" alt="">
+            <img src="assets/img/Travel/California/IMG_1624.JPG" alt=""><img src="assets/img/Travel/California/IMG_4316.jpeg" alt="">
+            <img src="assets/img/Travel/California/IMG_9044.jpeg" alt="">
+          </div>
+        </div>
+        <div class="photo-section">
+          <p class="photo-section-label">Skiing</p>
+          <p class="travel-desc">Been to mountains in British Columbia, Vermont, and Montréal. Hoping to ski in Europe soon!</p>
+          <div class="photo-strip">
+            <img src="assets/img/Travel/Canada/IMG_0892.jpeg" alt=""><img src="assets/img/Travel/Canada/IMG_1181.jpeg" alt="">
+            <img src="assets/img/Travel/Canada/IMG_4645.jpeg" alt=""><img src="assets/img/Travel/Canada/IMG_4742.jpeg" alt="">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cv-contact" class="cv-section">
+      <div class="section-content">
+        <h1>CONTACT</h1>
+        <p class="contact-intro">Let's get in touch!</p>
+        <div class="contact-links">
+          <a href="mailto:joelarimills@gmail.com" class="contact-link"><span class="contact-icon">✉</span>joelarimills@gmail.com</a>
+          <a href="https://github.com/joelmills2" target="_blank" class="contact-link"><span class="contact-icon">⌥</span>github.com/joelmills2</a>
+          <a href="https://www.linkedin.com/in/joelmills-" target="_blank" class="contact-link"><span class="contact-icon">in</span>linkedin.com/in/joelmills-</a>
+        </div>
+        <div class="resume-row">
+          <p>Here's my resume</p>
+          <a href="assets/resume_swe.pdf" target="_blank" class="resume-btn">DOWNLOAD RESUME</a>
+        </div>
+      </div>
+    </section>
   </div>
 
   <!-- Touch controls (mobile) -->

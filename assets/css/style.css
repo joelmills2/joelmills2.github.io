@@ -5,15 +5,18 @@
 }
 
 body {
-  overflow: hidden;
+  overflow-x: hidden;
   font-family: 'Space Grotesk', sans-serif;
-  background: #87CEEB;
+  background: #f5f2ee;
 }
 
 #game-canvas {
+  position: fixed;
+  top: 0; left: 0;
   display: block;
   width: 100vw;
   height: 100vh;
+  z-index: 1;
 }
 
 /* ---- Building Labels ---- */
@@ -40,13 +43,13 @@ body {
 
 /* ---- Car Selection ---- */
 #car-select {
-  position: fixed;
-  inset: 0;
+  position: relative;
+  min-height: 100vh;
   background: #f5f2ee;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 100;
+  z-index: 2;
 }
 
 .car-select-inner {
@@ -796,3 +799,109 @@ body {
   margin-bottom: 1.5rem !important;
   line-height: 1.6 !important;
 }
+
+/* ---- Scroll hint (on car-select screen) ---- */
+.scroll-hint-arrow {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  color: #bbb;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  pointer-events: none;
+  user-select: none;
+}
+.bounce-down {
+  font-size: 1rem;
+  animation: bounceDown 1.8s ease-in-out infinite;
+}
+@keyframes bounceDown {
+  0%, 100% { transform: translateY(0); opacity: 0.5; }
+  50%       { transform: translateY(6px); opacity: 1; }
+}
+
+/* ---- Classic View ---- */
+#classic-view {
+  position: relative;
+  z-index: 2;
+  background: #f5f2ee;
+}
+
+.cv-nav {
+  position: sticky;
+  top: 0;
+  background: rgba(245, 242, 238, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid #e4e0da;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  z-index: 30;
+  flex-wrap: wrap;
+}
+
+.cv-nav-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #111;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.cv-nav-links {
+  display: flex;
+  gap: 0.2rem;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.cv-nav-links a {
+  text-decoration: none;
+  color: #888;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.3rem 0.7rem;
+  border-radius: 100px;
+  transition: background 0.15s, color 0.15s;
+}
+.cv-nav-links a:hover { background: #111; color: #fff; }
+
+.cv-play-btn {
+  background: #111;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 100px;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.15s;
+}
+.cv-play-btn:hover { background: #333; }
+
+.cv-section {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 4.5rem 2rem;
+  border-bottom: 1px solid #e8e3dc;
+}
+.cv-section:last-child { border-bottom: none; }
+
+/* override section-content max-width inside classic view (cv-section already constrains it) */
+#classic-view .section-content { max-width: 100%; }

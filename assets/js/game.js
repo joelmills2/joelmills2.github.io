@@ -1000,7 +1000,11 @@ function update() {
 }
 
 // ---- Render loop ----
-function render() { requestAnimationFrame(render); update(); updateLabels(); renderer.render(scene, camera) }
+function render() {
+  requestAnimationFrame(render)
+  if (!state.started) return
+  update(); updateLabels(); renderer.render(scene, camera)
+}
 
 // ---- Car select ----
 document.querySelectorAll('.car-option').forEach(el => {
@@ -1018,7 +1022,10 @@ document.querySelectorAll('.shape-option').forEach(el => {
 document.getElementById('start-btn').addEventListener('click', () => {
   createVehicle(state.selectedColor, state.selectedShape)
   document.getElementById('car-select').style.display = 'none'
+  document.getElementById('classic-view').style.display = 'none'
   document.getElementById('hud').style.display = 'flex'
+  document.body.style.overflow = 'hidden'
+  window.scrollTo(0, 0)
   const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || window.innerWidth < 768
   if (isMobile) document.getElementById('touch-controls').style.display = 'flex'
   state.started = true; initAudio(); canvas.focus()
@@ -1046,6 +1053,8 @@ document.getElementById('menu-btn').addEventListener('click', () => {
   document.getElementById('hud').style.display = 'none'
   document.getElementById('touch-controls').style.display = 'none'
   document.getElementById('car-select').style.display = 'flex'
+  document.getElementById('classic-view').style.display = ''
+  document.body.style.overflow = ''
   if (isNight) toggleNight()
   if (rainActive) toggleRain()
   if (radioOn) { radioOn = false; if (radioAudio) { radioAudio.pause(); radioAudio.src = ''; radioAudio = null } }
