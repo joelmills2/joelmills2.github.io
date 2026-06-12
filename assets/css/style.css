@@ -809,18 +809,19 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.35rem;
-  color: #bbb;
+  gap: 0.4rem;
+  color: #999;
   font-family: 'Syne', sans-serif;
-  font-size: 0.65rem;
+  font-size: 0.82rem;
   font-weight: 800;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   pointer-events: none;
   user-select: none;
+  white-space: nowrap;
 }
 .bounce-down {
-  font-size: 1rem;
+  font-size: 1.2rem;
   animation: bounceDown 1.8s ease-in-out infinite;
 }
 @keyframes bounceDown {
